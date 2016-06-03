@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/swipebox.min.css">
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/jquery.swipebox.min.js"></script>
+    <style>
+        img{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+<a rel="gallery-1" href="images/jyimg1.jpg" class="swipebox">
+    <img src="images/jyimg1.jpg" alt="image">
+</a>
+<a rel="gallery-2" href="images/jyimg2.jpg" class="swipebox">
+    <img src="images/jyimg2.jpg" alt="image">
+</a>
+<a rel="gallery-3" href="images/jyimg3.jpg" class="swipebox">
+    <img src="images/jyimg3.jpg" alt="image">
+</a>
+<a rel="gallery-4" href="images/jyimg4.jpg" class="swipebox">
+    <img src="images/jyimg4.jpg" alt="image">
+</a>
+<a rel="gallery-5" href="images/jyimg5.jpg" class="swipebox">
+    <img src="images/jyimg5.jpg" alt="image">
+</a>
+<a rel="gallery-6" href="images/jyimg6.jpg" class="swipebox">
+    <img src="images/jyimg6.jpg" alt="image">
+</a>
+<a rel="gallery-8" href="images/jyimg8.jpg" class="swipebox">
+    <img src="images/jyimg8.jpg" alt="image">
+</a>
+<a rel="gallery-9" href="images/jyimg8-08.jpg" class="swipebox">
+    <img src="images/jyimg8-08.jpg" alt="image">
+</a>
+<a rel="gallery-10" href="images/jyimg9.jpg" class="swipebox">
+    <img src="images/jyimg8.jpg" alt="image">
+</a>
+<script type="text/javascript">
+    ;( function( $ ) {
+
+        $( '.swipebox' ).swipebox({
+            hideCloseButtonOnMobile: true//关闭按钮隐藏
+        });
+
+            $(window).click(function(){
+
+                if ( $.swipebox.isOpen ) {
+                    $( '#swipebox-overlay' ).remove();
+                }
+
+            })
+
+    } )( jQuery );
+</script>
+</body>
+</html>
