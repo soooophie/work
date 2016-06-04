@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- MPreview.mobeile CSS && JS -->
+    <link rel="stylesheet" type="text/css" href="css/MPreview.mobile.css"/>
+    <script type="text/javascript" src="js/quo.js"></script>
+    <script type="text/javascript" src="js/MPreview.mobile.js"></script>
+    <!-- MPreview.mobeile CSS && JS -->
+</head>
+<body>
+
+<img src="http://7jpp73.com1.z0.glb.clouddn.com/1.jpg?imageView2/1/w/400/h/400" alt="" />
+<img src="http://7jpp73.com1.z0.glb.clouddn.com/M_1.jpg?imageView2/1/w/400/h/400" alt="" />
+
+<!-- 用于展示插件的容器 -->
+<div class="overlay" id="overlay"></div>
+
+<script>
+    var elem = document.querySelectorAll('img');
+    var wrap = document.querySelector('#overlay');
+
+    for (var i = 0, len = elem.length; i < len; i++) {
+        elem[i].index = i;
+        elem[i].addEventListener('touchstart', function(e) {
+            e.preventDefault();
+
+            var title = this.index === 0 ? '风景' : '妹子';
+
+
+            wrap.className = wrap.className + ' in';
+
+            // 延迟初始化插件是为了让CSS动画走完
+            setTimeout(function() {
+                MPreview({
+                    data: ["http://7jpp73.com1.z0.glb.clouddn.com/1.jpg"],
+                    title: title,
+                    direction: 'left',
+                    wrap: '#overlay',
+                    init: function() {
+                        window.console && console.log('MPreview.mobile init');
+                    },
+                    close: function() {
+                        wrap.className = wrap.className.replace(' in', '');
+                    }
+                });
+            }, 400);
+
+        }, false);
+    }
+</script>
+</body>
+</html>
