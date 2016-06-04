@@ -95,7 +95,7 @@
 <script>
 
     $(function(){
-
+        var gallery;
         function initGallery(imgSrc){
             var pswpElement = document.querySelectorAll('.pswp')[0];
 
@@ -116,11 +116,14 @@
             };
 
             // Initializes and opens PhotoSwipe
-            var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+            gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
             gallery.init();
         }
         $("#firstImg").click(function(){
             initGallery($(this).attr("src"))
+        });
+        $(".pswp__img").on("click",".pswp__container",function(){
+            gallery.close();
         });
 
     });
