@@ -34,7 +34,7 @@
 
             // 延迟初始化插件是为了让CSS动画走完
             setTimeout(function() {
-                MPreview({
+                var mp = MPreview({
                     data: ["http://7jpp73.com1.z0.glb.clouddn.com/1.jpg"],
                     title: title,
                     direction: 'left',
@@ -46,6 +46,7 @@
                         wrap.className = wrap.className.replace(' in', '');
                     }
                 });
+                //mp.destroy();
             }, 400);
 
         }, false);

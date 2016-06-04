@@ -32,11 +32,11 @@
         innerHTML =
             '<div class="ui-MPreview-wrap">'+
             '   <div class="ui-MPreview-row">'+
-            '       <div class="ui-MPreview-toolbar">'+
-            '            <div class="ui-MPreview-back"><a href="javascript:;">〈</a></div>'+
-            '            <div class="ui-MPreview-title">{{title}}</div>'+
-            '            <div class="ui-MPreview-pages"><span class="ui-MPreview-currentPage">00</span>/<span class="ui-MPreview-countPage">00</span></div>'+
-            '        </div>'+
+            //'       <div class="ui-MPreview-toolbar">'+
+            //'            <div class="ui-MPreview-back"><a href="javascript:;">〈</a></div>'+
+            //'            <div class="ui-MPreview-title">{{title}}</div>'+
+            //'            <div class="ui-MPreview-pages"><span class="ui-MPreview-currentPage">00</span>/<span class="ui-MPreview-countPage">00</span></div>'+
+            //'        </div>'+
             '        <div class="ui-MPreview-view">'+
             '            <div class="ui-MPreview-imgbox">'+
             '                <ul class="ui-MPreview-imglist"></ul>'+
@@ -394,11 +394,12 @@
                     }
                 });
 
-                var h = parseInt(DOM.toolbar.style('height'), 10);
+                //var h = parseInt(DOM.toolbar.style('height'), 10);
+                var h = 0;
                 DOM.wrap.style('width', screen.width + 'px');
                 DOM.wrap.style('height', screen.height + 'px');
                 DOM.view.style('height', (screen.height - h) + 'px');
-                DOM.view.style('top', h + 'px');
+                //DOM.view.style('top', h + 'px');
 
                 // 当前容器宽高
                 this.offset = {
@@ -411,7 +412,11 @@
             // 绑定返回事件
             this.subscribe('init', function() {
                 var _this = this;
-                this.DOM.back.on('touch', function(e) {
+                //this.DOM.back.on('touch', function(e) {
+                //    e.preventDefault();
+                //    _this.destroy();
+                //});
+                this.DOM.imglist.on('touch', function(e) {
                     e.preventDefault();
                     _this.destroy();
                 });
@@ -935,7 +940,8 @@
                     _this.isScroll = false;
                     _this.isScale = false;
 
-                    var h = parseInt(DOM.toolbar.style('height'), 10),
+                    //var h = parseInt(DOM.toolbar.style('height'), 10),
+                    var h = 0,
                         width = _this.screen.width,
                         height = _this.screen.height,
                         he = height - h,
