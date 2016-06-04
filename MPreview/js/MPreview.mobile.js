@@ -412,11 +412,7 @@
             // 绑定返回事件
             this.subscribe('init', function() {
                 var _this = this;
-                //this.DOM.back.on('touch', function(e) {
-                //    e.preventDefault();
-                //    _this.destroy();
-                //});
-                this.DOM.imglist.on('click', function(e) {
+                this.DOM.imglist[0].addEventListener('click',function(e) {
                     e.preventDefault();
                     _this.destroy();
                 });
