@@ -416,7 +416,7 @@
                 //    e.preventDefault();
                 //    _this.destroy();
                 //});
-                this.DOM.imglist.on('touch', function(e) {
+                this.DOM.imglist.on('click', function(e) {
                     e.preventDefault();
                     _this.destroy();
                 });
@@ -510,12 +510,12 @@
 
             //设置总分页值
             this.subscribe('append', function() {
-                this.DOM.countPage.text(formatPage(this.data.length));
+                //this.DOM.countPage.text(formatPage(this.data.length));
             });
 
             // 设置分页值
             this.subscribe('setPage', function() {
-                this.DOM.currentPage.text(formatPage(this.index));
+                //this.DOM.currentPage.text(formatPage(this.index));
             });
 
             // 预加载
